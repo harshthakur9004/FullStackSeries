@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       body{
+         font-family: Arial,sans-serif;
+         background-color: #f4f4f9;
+         display: flex;
+         justify-content: center;
+         align-items: 100vh;
+         height: 120vh;
+         margin: 0;
+       }
+       form{
+        background-color: #ffffff;
+        padding: 20px 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px black;
+        width: 400px;
+       }
+       form h2{
+        text-align: center;
+        margin-bottom: 20px;
+        color: #333;
+       }
+       label{
+        display: block;
+        margin-bottom: 5px;
+        font-weight: 600;
+        color: #555;
+       }
+       input ,select,textarea, button{
+        width: 100%;
+        margin-bottom: 15px;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 14px;
+       }
+       input:focus,select:focus,textarea:focus{
+        border-color: #007bff;
+        outline: none;
+       }
+       button{
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        font-size: 10px;
+        transition: background-color 0.3s ease;
+        font-weight: bold;
+       }
+       button:hover{
+        background-color: #0056b3;
+
+       }
+       textarea{
+        resize: none;
+       }
+
+    </style>
+</head>
+<body>
+    <form>
+        <label for="user">Name</label>
+        <input type="name"  id="user" placeholder="Enter the name">
+        <br>
+        <label for="email" >Email</label>
+        <input type="email" id="email" placeholder="Enter the email">
+        <br>
+        <label for="pasward">Pasward</label>
+        <input type="password" id="pasward"  placeholder="Create pasward">
+        <br>
+        <label for="Phone">Phone:</label>
+        <input type="tel" id="phone" placeholder="Enter the mobile number">
+        <br>
+        <label for="age">Age:</label>
+        <input type="number" id="age" placeholder="Enter your age">
+        <br>
+        <label for="subject">Subjet:</label>
+        <select id="subject">
+        <option value="">Choose subject</option>
+        <option value="HTML">HTML</option>
+        <option value="CSS">CSS</option>
+        </select>
+        <br>
+        <label for="class">Class</label>
+        <input type="text" id="class" list="class-option" placeholder="select class">
+        <datalist id="class-option">
+        <option value="10th">10th</option>
+        <option vlaue="12th">12th</option>
+        </datalist>
+        <br>
+        <label for="file">File:</label>
+        <input type="file" id="file" accept=".pdf,.png,.jpg">
+        <br>
+        <label for="address">Address:</label>
+        <textarea name="address" id="address" placeholder="Enter the area" cols="25" row="3"></textarea>
+        <br>
+        <button>Submit</button>
+
+
+    </form>
+    
+</body>
+</html>

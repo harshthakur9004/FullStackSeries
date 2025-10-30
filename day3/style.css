@@ -1,0 +1,54 @@
+.video{
+    width: 80%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border: 2px solid #000;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.containers{
+    text-align: center;
+    padding: 20px;
+
+}
+.navlist{
+    display: flex;
+    justify-content: right;
+    list-style: none;
+    border: 1px solid lightblue;
+    padding: 12px;
+    border-radius: 10px;
+    width: 80%;
+    margin: 10px auto;
+    box-shadow: 0.5px 0.5px 10px rgba(0,0,0,0.1);
+
+
+}
+.item ,a{
+    margin-right: 2rem;
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    font-size: 18px;
+}
+.footar{
+    justify-content: center;
+    margin-top: 50px;
+
+}
+.social-icons{
+    justify-content:center;
+    margin-top: 10px;
+}
+.profile-image{
+    width: 2000px;
+    height:200px;
+    border-radius:50%;
+    margin: 20px auto;
+    border: 2px solid black;
+
+}
