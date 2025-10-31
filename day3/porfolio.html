@@ -1,42 +1,307 @@
-<!DOCTYPE html>
+<!--
+  Portfolio: Harsh Thakur
+  Single-file responsive HTML portfolio with CSS and minimal JS.
+  Save this as `portfolio.html` and open in a browser.
+-->
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Harsh thakur</title>
-    <!-- favi icon -->
-    <link rel="icon"  type="image/png" href="./image.ico">
-    <script src="https://kit.fontawesome.com/14cf4f505c.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Harsh Thakur — Portfolio</title>
+  <meta name="description" content="Portfolio of Harsh Thakur — B.Tech CSE student, web developer, and aspiring software engineer." />
+
+  <style>
+    :root{
+      --bg:#0f1724; --card:#0b1220; --muted:#94a3b8; --accent:#06b6d4; --glass: rgba(255,255,255,0.03);
+      --radius:14px; --gap:18px; font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+       background:linear-gradient(180deg,#071021 0%, #081426 100%);
+        color:#e6eef6; -webkit-font-smoothing:antialiased;
+      line-height:1.45; 
+      padding:32px;
+       display:flex; 
+       justify-content:center; 
+       font-size:16px;
+    }
+
+    .wrap{width:100%;
+         max-width:1100px}
+    header{display:flex;
+        gap:16px;
+        align-items:center;
+        justify-content:space-between;
+        margin-bottom:26px}
+    .brand{display:flex;
+        gap:14px;
+        align-items:center}
+    .logo{width:56px;
+        height:56px;
+        border-radius:12px;
+        background:linear-gradient(135deg,var(--accent),#7c3aed);
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        font-weight:700}
+    .brand h1{font-size:18px;margin:0}
+    nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+    nav a:hover{color:var(--accent)}
+
+    .hero{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:28px;border-radius:var(--radius);display:grid;grid-template-columns:1fr 360px;gap:22px;align-items:center}
+    .intro h2{margin:0 0 8px 0;
+        font-size:28px}
+    .intro p{margin:0;
+        color:var(--muted)}
+    .ctas{margin-top:16px;
+        display:flex;gap:12px}
+    .btn{padding:10px 14px;
+        border-radius:10px;
+        background:var(--accent);
+        color:#042026;text-decoration:none;
+        font-weight:600}
+    .btn.ghost{background:transparent;
+        border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+
+    .card{background:var(--card);
+        padding:18px;
+        border-radius:12px;
+        box-shadow:0 6px 18px rgba(2,6,23,0.6)}
+    .profile{display:flex;
+        flex-direction:column;
+        align-items:center;gap:12px}
+    .avatar{width:120px;
+        height:120px;border-radius:16px;
+        background:linear-gradient(135deg,#0ea5b7,#7c3aed);
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        font-size:32px;
+        font-weight:700}
+    .small{font-size:13px;
+        color:var(--muted)}
+
+    main{margin-top:22px;
+        display:grid;
+        grid-template-columns:2fr 1fr;
+        gap:18px}
+
+    section h3{margin:0 0 12px 0}
+    .about{background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);padding:20px;border-radius:12px}
+
+    .skills{display:flex;
+        flex-wrap:wrap;
+        gap:10px}
+    .skill{background:var(--glass);
+        padding:8px 10px;
+        border-radius:10px;
+        color:var(--muted);
+        font-weight:600;
+        font-size:13px}
+
+    .projects{display:grid;
+        grid-template-columns:repeat(2,1fr);
+        gap:12px}
+    .project{padding:14px;
+        border-radius:10px;
+        background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+        border:1px solid rgba(255,255,255,0.02)}
+    .project h4{margin:0 0 6px 0}
+    .project p{margin:0;color:var(--muted);font-size:14px}
+
+    .contact-form{display:flex;flex-direction:column;gap:10px}
+    input,textarea{background:transparent;border:1px solid rgba(255,255,255,0.06);
+        padding:10px;
+        border-radius:8px;
+        color:inherit}
+    textarea{min-height:120px;
+        resize:vertical}
+
+    aside .widget{margin-bottom:12px}
+    .timeline{display:flex;flex-direction:column;gap:8px}
+    .timeline .item{background:var(--glass);padding:10px;border-radius:8px}
+
+    footer{margin-top:22px;
+        text-align:center;
+        color:var(--muted);
+        font-size:14px}
+
+    /* responsive */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr}
+      main{grid-template-columns:1fr}
+      .projects{grid-template-columns:1fr}
+      nav{display:none}
+    }
+  </style>
 </head>
 <body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">HT</div>
+        <div>
+          <h1>Harsh Thakur</h1>
+          <div class="small">B.Tech CSE • Web developer • Problem solver</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
 
-    <div class="navBar">
-        <ul class="navlist">
-            <li class="item"> <i class="fa-solid fa-house-user"></i><a href="#"> Home</a></li>
-            <li class="item"><i class="fa-solid fa-info"></i><a href="#">About</a></li>
-            <li class="item"><i class="fa-solid fa-list-check"></i> <a href="#">Project</a></li>
-            <li class="item"><i class="fa-solid fa-address-book"></i><a href="#">Contact</a></li>
-            <li class="item"><i class="fa-solid fa-user"></i><a href="#">Login</a></li>
-        </ul>
+    <section class="hero card">
+      <div class="intro">
+        <h2>Hi, I'm Harsh — I build web experiences and solve algorithms.</h2>
+        <p>I am a 3rd year B.Tech Computer Science student learning full-stack development, DSA, and aiming for internships at top tech companies.</p>
 
-    </div>
-    <div class="containers">
-        <h1> Harsh Thakur</h1>
-        <p> welcome to my portfolio  page this is my day 3 project in Html</p>
-        <img src="./profile.png" alt="profileimage" class="profile-image">
-    </div>
-    <video src="./viedo.mp4"  class="video" controls></video>
-    <audio src="./audio.mp3" controls></audio>
-    <div class="footer">
-        <p> 2025 Harsh thakur. All right reserved</p>
-        <div class="social-icons">
-            <a href="#"><i class="fa-brands fa-facebook"></i></a>
-            <a href="#"><i class="fa-brands fa-twitter"></i></a>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-    </div>
+        <div class="ctas">
+          <a class="btn" href="#contact">Hire me</a>
+          <a class="btn ghost" href="#projects">See projects</a>
+        </div>
 
+        <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap">
+          <div class="card small">
+            <strong>Location</strong><div class="small">India</div>
+          </div>
+          <div class="card small">
+            <strong>Email</strong><div class="small">harsh@example.com</div>
+          </div>
+          <div class="card small">
+            <strong>Availability</strong><div class="small">Open to internships</div>
+          </div>
+        </div>
+      </div>
 
+      <aside class="profile card">
+        <div class="avatar">HT</div>
+        <div style="text-align:center">
+          <div style="font-weight:700">Harsh Thakur</div>
+          <div class="small">Full-Stack Developer • DSA Enthusiast</div>
+        </div>
+        <div style="width:100%;margin-top:10px;display:flex;gap:8px;justify-content:center">
+          <a class="btn ghost" href="#projects">Portfolio</a>
+          <a class="btn" href="#contact">Contact</a>
+        </div>
+      </aside>
+    </section>
+
+    <main>
+      <div>
+        <section id="about" class="about card">
+          <h3>About me</h3>
+          <p>Hello! I'm Harsh — a passionate developer who enjoys building clean, responsive web apps and solving algorithmic problems. Currently studying B.Tech CSE at GLA University and preparing for internships and competitive programming challenges.</p>
+
+          <h3 style="margin-top:16px">Skills</h3>
+          <div class="skills">
+            <span class="skill">HTML</span>
+            <span class="skill">CSS</span>
+            <span class="skill">JavaScript</span>
+            <span class="skill">React</span>
+            <span class="skill">Node.js</span>
+            <span class="skill">Express</span>
+            <span class="skill">MongoDB</span>
+            <span class="skill">DSA</span>
+            <span class="skill">Git</span>
+          </div>
+
+          <h3 style="margin-top:16px">Education</h3>
+          <div class="small">B.Tech Computer Science Engineering — GLA University (2023 - Present)</div>
+        </section>
+
+        <section id="projects" class="card" style="margin-top:12px">
+          <h3>Projects</h3>
+          <div class="projects">
+            <article class="project">
+              <h4>Faceless AI Tool Channel</h4>
+              <p>Automated daily AI tool showcase videos pipeline. Built scripts and templates for fast production.</p>
+              <div class="small" style="margin-top:8px">Tech: JS, FFmpeg, Node</div>
+            </article>
+
+            <article class="project">
+              <h4>Children's Book (KDP)</h4>
+              <p>Designed and published a creative prompts book for kids called "What If...?" for Amazon KDP.</p>
+              <div class="small" style="margin-top:8px">Tech: Canva, KDP</div>
+            </article>
+
+            <article class="project">
+              <h4>Shopify / DTC Setup</h4>
+              <p>Planned and prototyped a DTC store with product pages, and integrated with Printify for fulfillment.</p>
+              <div class="small" style="margin-top:8px">Tech: Shopify, Printify</div>
+            </article>
+
+            <article class="project">
+              <h4>Resume Design & Prompt Packs</h4>
+              <p>Designed high-converting resumes and created ChatGPT prompt packs for sale on Fiverr & Gumroad.</p>
+              <div class="small" style="margin-top:8px">Tools: Canva, ChatGPT</div>
+            </article>
+          </div>
+        </section>
+
+      </div>
+
+      <aside>
+        <div class="widget card">
+          <h3>Contact</h3>
+          <form id="contactForm" class="contact-form">
+            <input type="text" id="name" placeholder="Your name" required />
+            <input type="email" id="email" placeholder="you@example.com" required />
+            <textarea id="message" placeholder="How can I help?" required></textarea>
+            <div style="display:flex;gap:8px">
+              <button type="submit" class="btn" style="flex:1">Send</button>
+              <a class="btn ghost" href="mailto:harsh@example.com" style="flex:1;text-align:center">Email</a>
+            </div>
+            <div id="status" class="small" style="margin-top:8px"></div>
+          </form>
+        </div>
+
+        <div class="widget card">
+          <h3>Experience</h3>
+          <div class="timeline">
+            <div class="item"><strong>2025</strong> — Working on freelancing projects & YouTube channel</div>
+            <div class="item"><strong>2024</strong> — Launched KDP book & Etsy store prototypes</div>
+            <div class="item"><strong>2023</strong> — Started B.Tech CSE</div>
+          </div>
+        </div>
+
+        <div class="widget card">
+          <h3>Quick Links</h3>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <a class="small" href="#projects">Portfolio</a>
+            <a class="small" href="#contact">Hire me</a>
+            <a class="small" href="#">Resume (PDF)</a>
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      <div>Made with ♥ by Harsh • <span class="small">Built with plain HTML & CSS</span></div>
+    </footer>
+  </div>
+
+  <script>
+    // Simple contact form handler — demo only (no real backend)
+    document.getElementById('contactForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      const status = document.getElementById('status');
+
+      if(!name || !email || !message){ status.textContent = 'Please fill all fields.'; return }
+      status.textContent = 'Thank you! Your message looks good. (Demo)';
+
+      // Optionally open user's default mail client
+      const subject = encodeURIComponent('Work inquiry from ' + name);
+      const body = encodeURIComponent(message + '\n\n' + name + ' | ' + email);
+      window.location.href = `mailto:harsh@example.com?subject=${subject}&body=${body}`;
+    })
+  </script>
 </body>
 </html>
