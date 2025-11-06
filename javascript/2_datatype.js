@@ -30,3 +30,14 @@ console.log(myPhone);
 // big int example
 var myMoney=1234565785654322;
 console.log(myMoney);
+
+// string to number
+var money="256"
+console.log("this is a string ",money);
+console.log(  typeof +myMoney); // use this + operator before the variable
+
+// number to string 
+var age=45;
+console.log("this is number ",age);
+console.log(typeof String(age)); // method 1
+console.log(typeof Date(age +"")); // method 2
