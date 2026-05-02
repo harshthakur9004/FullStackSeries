@@ -14,3 +14,18 @@
  console.log(_myLastName$);
 var $cityName="new york";
 console.log($cityName);
+// implicit  coisen 
+let sum= "5"-10;
+let s="5"+10; // in case of sum here operate concat
+console.log(s);
+console.log(sum);
+console.log("10"+5);
+console.log(9-"5");
+console.log("java"+"script");
+console.log(""+0);
+console.log("harsh "- "thakur");
+console.log(true+true);
+console.log(true+false);
+console.log(false+false);
+console.log(false - true);
+

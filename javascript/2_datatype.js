@@ -36,8 +36,28 @@ var money="256"
 console.log("this is a string ",money);
 console.log(  typeof +myMoney); // use this + operator before the variable
 
-// number to string 
-var age=45;
+// number to string
+var age=56;
 console.log("this is number ",age);
 console.log(typeof String(age)); // method 1
 console.log(typeof Date(age +"")); // method 2
+// parseInt or pasreFloat also use for conversion string to num (both are function )
+const myScore="23"
+const mySc=parseInt(myScore);
+console.log("new number "+mySc);
+
+// operation
+console.log(parseInt("123"));
+console.log(parseInt("123",10));
+console.log(parseInt("  123  "));
+console.log(parseInt("077"));
+console.log(parseInt(9.7));
+// use isNaN() function to identify is it value or not
+
+
+// important question
+// why nan == nan ? it is false
+if(NaN !=NaN){
+  console.log(" now correct ");
+}
+// reason 
